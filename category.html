@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="category.css">
+
+    <title>Cruds</title>
+</head>
+<body>
+    <div class="cruds">
+
+        
+        <div class="head">
+            <br>
+            <h2><i>Category Management System</i></h2>
+            
+        </div>
+        <br>
+               
+        
+    
+
+
+
+        <div class="inputs">
+
+                            <h2><i> Add New Category......</i></h2>
+                            <br>
+                            <input type="text" name="" id="categoryCode" placeholder="Category Code......">
+                            <input type="text" name="" id="categoryName" placeholder="Category Name......." >
+                            <input type="number" name="" id="count" placeholder="count">
+            
+                            <button  id="submit">Add Category</button>
+        </div>
+
+
+
+
+
+        <div class="outputs"></div>
+
+                <div class="searchBlock">
+                        <input onkeyup="searchData(this.value )" type="text" name="" id="search" placeholder="Search">
+                        <div class="btnsearch">
+                            <button onclick="getSearchMood(this.id)" id="searchCode">Search By Code </button>
+                            <button onclick="getSearchMood(this.id)" id="searchName">Search By Name </button>
+                        </div>
+                        <div id="deleteAll">
+
+                        </div>
+                        <table>
+                            <tr>
+                                <th>id</th>
+                                <th>code</th>
+                                <th>name</th>
+                                <th>upDate</th>
+                                <th>Delete</th>
+                            </tr>
+
+
+                            <tbody id="tt">
+                         
+                            </tbody>
+                        </table>
+                        
+                </div>
+    </div>
+
+
+    <!-- ...................................
+    ........................................... -->
+
+
+
+    <script >
+
+
+let code    =  document.getElementById('categoryCode');
+let name    =  document.getElementById('categoryName');
+let count    =  document.getElementById('count');
+let submit   =  document.getElementById('submit');
+let mood     = 'Add Category';
+let tm;
+
+
+
+ //create category
+
+ let datapro;
+    if(localStorage.getItem('ourProduct') != null)
+    {
+    datapro=JSON.parse(localStorage.getItem('ourProduct'));
+    showData();
+    
+    }
+    else
+    {
+    datapro=[]; 
+    }
+
+submit.onclick= function ()
+{
+    var category =
+            {
+                code   :   code.value.toLowerCase(),
+                name   :   name.value.toLowerCase(),
+                count  :   count.value
+                
+            }
+            //validation
+            if(name.value!=''
+             && code.value!=''
+             &&
+              category.count <100)
+             {
+                if(mood==='Add Category')
+            {
+
+                if(category.count>1){
+                    for(let i = 0; i<category.count; i++)
+                    {
+                        datapro.push(category);
+    
+                    }
+                }
+                else{
+                    datapro.push(category);
+                }
+            }
+            else{
+                datapro[tm] = category;
+                mood = 'Add Category';
+                submit.innerHTML='Add Category';
+                count.style.display='block'
+            }
+            clearData();
+            }
+           
+       
+        localStorage.setItem('ourProduct', JSON.stringify(datapro));
+        showData();
+           
+}
+
+
+
+  //clear data 
+  function clearData()
+    {
+        code.value='';
+        name.value='';
+        count.value='';
+
+    }
+
+
+
+       //read
+   
+function showData()
+{
+   
+    let table=``;
+    for(var i= 0 ; i<datapro.length ; i++)
+    {
+        table+=`   <tr>
+        <td>${i+1}</td>
+        <td>${datapro[i].code}</td>
+        <td>${datapro[i].name}</td>
+        <td><button onclick="updateData(${i})" id="update">update</button></td>
+        <td><button onclick="deletePro(${i})" id="delete">delete</button></td>
+    </tr>
+`
+document.getElementById("tt").innerHTML=table;
+        let btnDelet = document.getElementById('deleteAll');
+        if(datapro.length>0)
+        {
+            btnDelet.innerHTML=
+            `
+            <button onclick="deleteAll()" >Delete All (${datapro.length})</button>
+            `
+        }
+        else
+        {
+            btnDelet.innerHTML=' ';
+
+        }
+    }
+
+}
+
+
+
+
+    //delete
+
+
+    function deletePro(i)
+    {
+       datapro.splice(i,1)
+       localStorage.ourProduct=JSON.stringify(datapro);
+       showData()
+    }
+
+    
+    //deleteAll
+    function deleteAll()
+    {
+        localStorage.clear();
+        datapro.splice(0);
+        showData();
+    }
+    showData()
+
+
+
+    
+//update
+function updateData(i){
+
+code.value=datapro[i].code;
+name.value=datapro[i].name;
+count.style.display= 'none';
+submit.innerHTML= 'update Category';
+mood  = 'update Category';
+tm = i;
+scroll({
+    top:0,
+    behavior: "smooth"
+})
+
+
+}
+
+
+
+
+//search
+let searchMode = 'Code';
+function getSearchMood(id)
+{
+    let search =document.getElementById('search')
+    if(id==  'searchCode')
+    {
+        searchMode='Code';
+        
+    }
+    else{
+        searchMode = 'Name';
+    
+      }
+      search.placeholder ='Search By' +searchMode;
+    search.focus()
+    search.value='';
+    showData();
+}
+
+
+
+
+
+
+
+
+function searchData(value)
+{
+    let table='';
+    for(let i = 0; i<datapro.length; i++){
+    if (searchMode== 'Code')
+    {
+            if(datapro[i].code.includes(value.toLowerCase()))
+            {
+                table+=`   <tr>
+                <td>${i}</td>
+                <td>${datapro[i].code}</td>
+                <td>${datapro[i].name}</td>
+                <td><button onclick="updateData(${i})" id="update">update</button></td>
+                <td><button onclick="deletePro(${i})" id="delete">delete</button></td>
+            </tr>
+        `
+        document.getElementById("tt").innerHTML = table;
+            }
+        }
+    
+    else
+    {
+            if(datapro[i].name.includes(value.toLowerCase()))
+            {
+                table+=`   <tr>
+                <td>${i}</td>
+                <td>${datapro[i].code}</td>
+                <td>${datapro[i].name}</td>
+                <td><button onclick="updateData(${i})" id="update">update</button></td>
+                <td><button onclick="deletePro(${i})" id="delete">delete</button></td>
+            </tr>
+        `
+        document.getElementById("tt").innerHTML = table;
+            }
+        }
+        document.getElementById("tt").innerHTML = table;
+    }
+}
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

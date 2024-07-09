@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="curdsAdmin.css">
+
+    <title>Cruds</title>
+</head>
+<body>
+    <div class="cruds">
+
+        
+        <div class="head">
+            <h2>CRUDS</h2>
+            <p>Product Management System</p>
+        </div>
+
+
+
+        <div class="inputs">
+
+                            <input type="text" name="" id="name" placeholder="ProductName" >
+
+                    <div class="price">
+                            <input onkeyup="getTotal()" type="number" id="price" placeholder="price"  >
+                            <input onkeyup="getTotal()" type="number" name="" id="taxes" placeholder="taxes" >
+                            <input onkeyup="getTotal()" type="number" name="" id="ads" placeholder="ads"   >
+                            <input  onkeyup="getTotal()" type="number" name="" id="discount" placeholder="discount"  >
+                            <small id="total"></small>
+                    </div>
+
+                    <input type="number" name="" id="count" placeholder="count">
+                    <input type="text" name="" id="category" placeholder="category">
+            
+                    <button  id="submit">Create</button>
+
+
+        </div>
+
+
+
+
+
+        <div class="outputs"></div>
+
+                <div class="searchBlock">
+                        <input onkeyup="searchData(this.value )" type="text" name="" id="search" placeholder="Search">
+                        <div class="btnsearch">
+                            <button onclick="getSearchMood(this.id)" id="searchTitele">Search By Title </button>
+                            <button onclick="getSearchMood(this.id)" id="searchCategory">Search By Category </button>
+                        </div>
+                        <div id="deleteAll">
+
+                        </div>
+                        <table>
+                            <tr>
+                                <th>id</th>
+                                <th>Name</th>
+                                <th>price</th>
+                                <th>taxes</th>
+                                <th>ads</th>
+                                <th>discount</th>
+                                <th>total</th>
+                                <th>category</th>
+                                <th>upDate</th>
+                                <th>Delete</th>
+                            </tr>
+
+
+                            <tbody id="tt">
+                         
+                            </tbody>
+                        </table>
+                        
+                </div>
+            
+
+        
+                        
+
+
+
+
+
+    </div>
+    <script src="curdsAdmin.js"></script>
+    
+</body>
+</html>

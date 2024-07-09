@@ -1,0 +1,22 @@
+.MyHeader {
+    background-color: #d9643a;
+    height: 50px;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  .MyHeader strong {
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 960px) {
+    .Cont {
+      flex-direction: column;
+    }
+  }
+  @media (min-width: 1200px) {
+    .Cont {
+      flex-direction: row;
+    }
+  }

@@ -1,0 +1,234 @@
+body {
+
+  background-color: #000000;
+}
+
+*{
+  font-family: 'Orbitron';
+}
+
+#sign {
+  visibility: hidden;
+  position: fixed;
+  left: 33%;
+  top: 15%;
+  height: 450px;
+  width: 400px;
+  background-color: #d9643a;
+  /* background: linear-gradient(to right, #fe53baa8, #09fbd3a4); */
+  border: 2px solid;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.534);
+}
+
+/* #sign:hover {
+  
+  background: linear-gradient(to left, #fe53bab0, #09fbd3be);
+  box-shadow: 0 0 50px #FE53BB;
+} */
+
+input[type="text"],input[type="password"],input[type="email"] {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+
+
+#userName {
+  position: relative;
+  top: 35px;
+  left: 20px;
+  height: 40px;
+  width: 350px;
+  /* background-color: cyan; */
+  text-align: center;
+  border-radius: 10px;
+  border-style: hidden;
+  font-weight: 900;
+  font-size: larger;
+  text-transform: capitalize;
+}
+#userName:focus{
+  outline-width: 0px;
+}
+#Password {
+  /* background-color: cyan; */
+  position: relative;
+  margin-top: 20px;
+  top: 50px;
+  left: 20px;
+  height: 40px;
+  width: 350px;
+  text-align: center;
+  border-radius: 10px;
+  border-style: hidden;
+  font-weight: 900;
+  font-size: larger;
+}
+#Password:focus{
+  outline-width: 0px;
+}
+
+
+#btn {
+  position: relative;
+  margin-top: 20px;
+  top: 80px;
+  left: 20px;
+  height: 40px;
+  width: 350px;
+  color: black;
+  font-weight: bolder;
+  background-color: #70320e;
+  border-color: #000000;
+  border-radius: 10px;
+  border: 0;
+}
+
+#btn:hover {
+  color: white;
+  background-color: rgb(2, 40, 70);
+  border-color: rgb(2, 40, 70);
+  border: 0;
+}
+
+#regDiv{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-decoration: underline;
+  position: relative;
+  margin-top: 20px;
+  top: 150px;
+  left: 35%;
+  height: 40px;
+}
+
+#signUp {
+  background-color: #d9643a;
+  visibility: hidden;
+  position: fixed;
+  float: inherit;
+  left: 33%;
+  top: 13%;
+  height: 450px;
+  width: 400px;
+  /* background: linear-gradient(to right, #fe53bab6, #09fbd3af); */
+  border: 2px solid;
+  border-radius: 30px;
+  box-shadow: 0 0 50px rgba(248, 248, 248, 0.534);
+}
+
+#regName{
+  position: relative;
+  top: 15px;
+  left: 20px;
+  height: 40px;
+  width: 350px;
+  text-align: center;
+  border-radius: 20px;
+  border-style: hidden;
+  font-weight: 700;
+  font-size: larger;
+  text-transform: capitalize;
+}
+#regName:focus{
+  outline: 0px;
+}
+#fullName{
+  position: relative;
+  top: 30px;
+  left: 20px;
+  height: 40px;
+  width: 350px;
+  text-align: center;
+  border-radius: 20px;
+  border-style: hidden;
+  font-weight: 700;
+  font-size: larger;
+  text-transform: capitalize;
+}
+#fullName:focus{
+  outline: 0px; 
+}
+#email,#address{
+  position: relative;
+  top: 45px;
+  left: 20px;
+  height: 40px;
+  width: 350px;
+  text-align: center;
+  border-radius: 20px;
+  border-style: hidden;
+  font-weight: 700;
+  font-size: larger;
+}
+#email:focus, #address:focus{
+  outline: 0px; 
+}
+#userpass{
+  position: relative;
+  top: 60px;
+  left: 20px;
+  height: 40px;
+  width: 350px;
+  text-align: center;
+  border-radius: 20px;
+  border-style: hidden;
+  font-weight: 700;
+  font-size: larger;
+}
+#userpass:focus{
+  outline: 0px; 
+}
+#regBtn{
+  position: relative;
+  margin-top: 20px;
+  top: 80px;
+  left: 20px;
+  height: 40px;
+  width: 350px;
+  color: black;
+  font-weight: 800;
+  font-size: larger;
+  background-color: #70320e;
+  border-color: #000000;
+  border-radius: 10px;
+  border: 0;
+}
+
+#regBtn:hover{
+  color: white;
+  background-color: rgb(2, 40, 70);
+}
+
+/* #signUp:hover {
+  background: linear-gradient(to left, #fe53ba36, #09fbd328);
+  box-shadow: 0 0 50px #FE53BB;
+} */
+
+#regDiv:hover , #logDiv:hover{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+#logDiv{
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  position: relative;
+  top: 120px;
+  right: 45%;
+}
+
+#regName:focus, #userpass:focus{
+  background-color: rgb(255, 255, 255);
+}
+
+#regName:invalid, #userpass:invalid{
+  background-color: rgb(224, 143, 37);
+}
+
+#regName:valid, #userpass:valid{
+  background-color: rgb(81, 194, 53);
+}

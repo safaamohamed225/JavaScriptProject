@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="Home.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <link href="login.html" />
+    <title>KMS</title>
+</head>
+
+<body>
+    <header>
+        <div id="menu-bar" class="fas fa-bars" onclick="showmenu()"></div>
+        <a href="" class="logo"> <span>K</span> <span>M</span> <span>S</span> </a>
+        <nav class="navbar">
+            <a href="Home.html">Home</a>
+            <a href="curdsAdmin.html">Prouducts</a>
+            <a href="category.html"> Category</a>
+            <a href="contact.html"> Contact Us</a>
+        </nav>
+        <div class="icon">
+            <i class="fas fa-search" onclick="showbar()" id="search-btn"></i>
+            <i class="fas fa-user" onclick="showform()"></i>
+            <a href="cart.html"><i class="fa-solid fa-cart-plus"></i></a>
+        </div>
+        <form action="" class="search-form">
+            <input type="search" id="search-bar" placeholder="What you looking for..." />
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </header>
+    <div class="login-form">
+        <i class="fas fa-times" id="form-close" onclick="hideform()"></i>
+        <form action="">
+            <h3>login</h3>
+            <input type="email" class="box" placeholder="Enter your email" />
+            <input type="password" class="box" placeholder="Enter your password" />
+            <input type="submit" value="login now" class="btn" />
+            <input type="checkbox" id="remember" />
+            <label for="remmember"> remember me</label>
+            <p>forget password? <a href="">click here</a></p>
+            <p>don't have acount? <a href="">sign up</a></p>
+        </form>
+    </div>
+    <!-- ---------------------------------
+    -------------------------------------------
+    ---------------------------------------------------
+    ------------------------------------------------------
+    --------------------------------------------------------
+    --------------------------------------------------------
+    --------------------------------------------------------
+    -------------------------------------------------------\
+    ------------------------------
+    ------------------------------ -->
+    <section class="home" id="home">
+        <div class="content">
+            <h3><span>K</span> <span>M</span> <span>S</span> MAKE SHOP EASY</h3>
+            <p>Discover New Product With Us, Adventure Awaits</p>
+            <a href="#" class="btn">Discover More</a>
+        </div>
+        <div class="controls">
+            <span class="video-btn blue" data-src="images/vid-1.mp4"> </span>
+            <span class="video-btn" data-src="images/vid-2.mp4"> </span>
+            <span class="video-btn" data-src="images/vid-3.mp4"></span>
+            <span class="video-btn" data-src="images/vid-4.mp4"></span>
+            <span class="video-btn" data-src="images/vid-5.mp4"></span>
+        </div>
+        <div class="video-container">
+            <video src="images/vid-3.mp4 " id="video-slider" loop autoplay muted></video>
+        </div>
+    </section>
+
+    <!-- 
+
+....................
+
+
+         -->
+    <section class="packages" id="packages">
+        <h1 class="heading">
+            <span>P</span>
+            <span>R</span>
+            <span>O</span>
+            <span>D</span>
+            <span>U</span>
+            <span>C</span>
+            <span>T</span>
+            <span>S</span>
+        </h1>
+
+        <div class="container">
+            <div class="box">
+                <div style="display: none" class="id1">1</div>
+                <img class="img1" src="images/p-1.jpg" alt="" />
+                <div class="content">
+                    <h3 class="title1">
+                        Apple IPHONE 12 PRO - 6.1-Inch 128GB/6GB 5G Mobile Phone - Gold (
+                        A )
+                    </h3>
+                    <p class="brand1">Brand: Apple | Similar products from Apple</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price price1">EGP 36,300.00 |<span>EGP 50,000.00</span></div>
+                    <a href="#" class="btn" onclick="GetObject('title1','brand1','price1','id1','img1')">ADD TO CART</a>
+                </div>
+            </div>
+            <div class="box">
+                <div style="display: none" class="id2">2</div>
+                <img class="img2" src="images/p-2.jpg" alt="" />
+                <div class="content">
+                    <h3 class="title2">realme 11 PRO - 6.7-Inch 256GB/8GB 5G Mobile Phone - Black</h3>
+                    <p class="brand2"> Brand: realme | Similar products from realme</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price price2">EGP 14,350.00|<span>EGP 14,500.00</span></div>
+                    <a href="#" class="btn" onclick="GetObject('title2','brand2','price2','id2','img2')">ADD TO CART</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p-3.jpg" alt="" />
+                <div class="content">
+                    <h3>
+                        OPPO Reno 8T - 6.43 Inch - 8GB/256GB RAM - 4G - Dual SIM Mobile
+                        Phone - Sunset Orange
+                    </h3>
+                    <p>Brand: OPPO | Similar products from OPPO</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">EGP 12,130.00 <span>EGP 12,500.00</span></div>
+                    <a href="#" class="btn">ADD TO CART</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p-4.jpg" alt="" />
+                <div class="content">
+                    <h3>
+                        OPPO Reno 8 5G - 6.4-inch 256GB/8GB Dual SIM Mobile Phone -
+                        Shimmer Black (D)
+                    </h3>
+                    <p>Brand: OPPO | Similar products from OPPO</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">EGP 14,999.99 <span>EGP 15,999.00</span></div>
+                    <a href="#" class="btn">ADD TO CART </a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p-5.jpg" alt="" />
+                <div class="content">
+                    <h3>
+                        Samsung Galaxy A14 - 6.6-inch 4GB/128GB Dual Sim 4G - Mobile Phone
+                        - Black
+                    </h3>
+                    <p>Brand: Samsung | Similar products from Samsung</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">EGP 6,599.00 <span> EGP 7,999.00</span></div>
+                    <a href="#" class="btn">ADD TO CART</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p-6.jpg" alt="" />
+                <div class="content">
+                    <h3>Nokia Tab T20 - 10.4-inch 4GB/64GB Nano-SIM 4G - Ocean Blue</h3>
+                    <p>Brand: Nokia | Similar products from Nokia</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">EGP 7,499.99 <span>EGP 7,499.99</span></div>
+                    <a href="#" class="btn">ADD TO CART</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="cart.js"></script>
+    <script src="loginscript.js"></script>
+</body>
+
+</html>

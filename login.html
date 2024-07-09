@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="Author" content="jootekkin" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assests/images/logo.png" type="image/x-icon" />
+  <title>E-Commerce</title>
+  <link rel="stylesheet" href="loginstyle.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet" />
+  <link href="cart.html"/>
+
+  <link href="Home.html"/>
+  
+</head>
+
+<body>
+  <div id="sign">
+    <h2 style="text-align: center; color: rgb(8, 6, 2)">Login</h2>
+    <input type="text" name="userName" id="userName" placeholder="User Name" required />
+    <input type="password" name="Password" id="Password" placeholder="Password" required />
+    <input type="button" value="LOGIN" id="btn" onclick="checkLogin()" />
+    <a id="regDiv" onclick="switched()">Register now</a>
+  </div>
+
+  <div id="signUp">
+    <h2 style="text-align: center; color: rgb(0, 0, 0)">Registration</h2>
+    <input type="text" name="regName" id="regName" placeholder="User Name" pattern="^[a-zA-Z0-9]{8,15}$" required />
+    <input type="text" name="fullName" id="fullName" placeholder="Full Name" required />
+    <input type="email" name="email" id="email" pattern=".+@globex\.com" placeholder="Example@yahoo.com" required />
+    <input type="text" name="address" id="address" pattern=".+@globex\.com" placeholder="Address" required
+      style="margin-top: 10px" />
+    <input type="password" name="userpass" id="userpass" placeholder="Password"
+    pattern="^[a-zA-Z0-9]{8,15}$" required />
+    <input type="button" value="Sign up" id="regBtn" onclick="register()" />
+  </div>
+ 
+  <script src="loginscript.js"></script>
+</body>
+
+</html>
